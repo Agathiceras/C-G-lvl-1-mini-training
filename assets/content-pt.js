@@ -130,7 +130,7 @@ COURSE.modules = [
       { id:'proj', e:'⚡', title:'Projetos reais de alunos', blocks:[
         { t:'p', html:'É assim que ficam os projetos do Code & Game 1 depois que os alunos os publicam no Kodland Sparks. Os dois foram feitos por <b>alunos reais</b> do curso — abra-os para jogar na plataforma:' },
         { t:'projects', items:[
-          { href:'https://portfolio.kodland.org/sonia55667/cmva7brdz06mont01k3fsw4zb', img:'../shared/images/posion.png', e:'🧪', color:'#d946ef', tag:'Scratch', title:'posion', by:'sonia55667', desc:'Um projeto em Scratch num laboratório mágico, com poções e um portal brilhante.' },
+          { href:'https://portfolio.kodland.org/sonia55667/cmva7brdz06mont01k3fsw4zb', img:'shared/images/posion.png', e:'🧪', color:'#d946ef', tag:'Scratch', title:'posion', by:'sonia55667', desc:'Um projeto em Scratch num laboratório mágico, com poções e um portal brilhante.' },
           { href:'https://portfolio.kodland.org/juanavalentina78262/cmv8vx5p50hb0qp2tg720knef', e:'🐹', color:'#f59e0b', tag:'Scratch', fw:true, title:'hamster scratch', by:'juanavalentina78262', desc:'“O hamster do Scratch… sim, como o gato, mas em vez de um gato é um HAMSTERRRR” <i>(traduzido do espanhol)</i>.' }
         ]},
         { t:'callout', kind:'tip', e:'💬', html:'Repare na etiqueta <b>Feedback wanted</b> no segundo projeto: o aluno ativou <b>Request feedback</b> ao publicar. Uma avaliação curta em três campos — impressão geral, pontos fortes e uma coisa para melhorar — faz muita diferença.' }
@@ -166,7 +166,7 @@ COURSE.modules = [
           ['Ativar Request feedback','Assim outros alunos podem deixar um feedback estruturado. Funciona só em projetos públicos.'],
           ['Copiar o link e enviar no cartão','Publicar no Sparks e enviar o link na plataforma da Kodland são <b>dois passos diferentes</b>. Os dois são obrigatórios.']
         ]},
-        { t:'sim', flag:'sparksPublish', src:'../sparks-publish/Sparks_Publish.html', e:'⚡', badge:'Simulação', title:'Publicar no Kodland Sparks', text:'Uma réplica do Kodland Sparks: você publica um projeto como uma aluna, conhece as três opções de visibilidade e resolve os dois problemas mais comuns. Cerca de 5 minutos. A verificação do módulo é liberada quando você termina.' }
+        { t:'sim', flag:'sparksPublish', src:'sparks-publish/Sparks_Publish.html', e:'⚡', badge:'Simulação', title:'Publicar no Kodland Sparks', text:'Uma réplica do Kodland Sparks: você publica um projeto como uma aluna, conhece as três opções de visibilidade e resolve os dois problemas mais comuns. Cerca de 5 minutos. A verificação do módulo é liberada quando você termina.' }
       ]},
       { id:'trouble', e:'🛠️', title:'Quando algo dá errado', blocks:[
         { t:'acc', open:false, items:[
