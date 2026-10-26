@@ -94,8 +94,19 @@ main{max-width:1180px;margin:0 auto;padding:22px 28px 140px}
 .pacts .pubtag{background:#eefaf1;border-color:#bfe8cc;color:#2f9d52}
 .byline{display:flex;justify-content:space-between;color:#666;font-size:14px;align-items:center}
 .byline span{display:flex;gap:8px;align-items:center}
-.linkbox{margin-top:14px;display:flex;gap:8px;align-items:center;background:#f7f8fa;border-radius:12px;padding:10px 14px;font-size:13.5px;color:#444}
-.linkbox code{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* Browser address bar: the project link is copied from here */
+.addr{flex:0 0 auto;background:#f1f3f6;border-bottom:1px solid #e6e8ee;display:flex;gap:10px;align-items:center;padding:7px 14px}
+.addr .nav{color:#9aa0ab;font-size:15px;letter-spacing:6px}
+.addr .bar{flex:1;display:flex;align-items:center;gap:8px;text-align:left;background:#fff;border:1px solid #e3e6ec;border-radius:999px;padding:7px 14px;font-size:13.5px;color:#333;min-width:0}
+.addr .bar code{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:Inter,system-ui,sans-serif}
+.addr .bar.sel code{background:#cfe0ff}
+/* Profile page */
+.mywrap{display:grid;grid-template-columns:300px 1fr;gap:18px;align-items:start}
+.box{border:1px solid #ececec;border-radius:18px;margin-bottom:14px;overflow:hidden}
+.box h4{margin:0;padding:12px 16px;border-bottom:1px solid #f0f0f0;font-size:14.5px}
+.box .in{padding:12px 16px;font-size:13.5px;color:#666}
+.box .tabs2{display:flex;gap:6px;margin-bottom:10px}.box .tabs2 span{flex:1;text-align:center;border-radius:999px;padding:6px;font-size:12.5px}.box .tabs2 span:first-child{background:#eee;color:#222}
+.mygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 /* Profile + feed cards */
 .prof{display:flex;gap:18px;align-items:center;margin-bottom:22px}
 .prof .av{width:80px;height:80px;font-size:30px}
@@ -144,6 +155,7 @@ main{max-width:1180px;margin:0 auto;padding:22px 28px 140px}
 </style>
 </head>
 <body>
+<div class="addr" id="addr"></div>
 <header class="top" id="top"></header>
 <div id="scroller"><main id="app"></main></div>
 <div id="spot"></div>
@@ -172,8 +184,9 @@ const S = {
   formFor:'robot',                       // which project the form is editing
   robot:{ published:false, vis:null },
   house:{ vis:'me' },                    // Marina's project, saved for "Only me"
-  filter:'Python', dd:false, gems:2, visSeen:{}
+  filter:'Python', dd:false, gems:2, visSeen:{}, copied:false, myNick:''
 };
+S.myNick = T.studentNick;
 
 /* ---------- Guided steps: what to click (act) and where (target). Texts: CONTENT.steps[id] ---------- */
 const STEPS = [
@@ -188,7 +201,9 @@ const STEPS = [
   { id:'feedback', act:'fb', target:'#tFb' },
   { id:'promo', next:true, target:'#tPromo' },
   { id:'send', act:'submit', target:'#bSubmit' },
-  { id:'link', next:true, target:'#linkBox' },
+  { id:'findMy', act:'nav:my', target:'#nMy' },
+  { id:'openPublished', act:'open:robot', target:'#cRobot' },
+  { id:'link', act:'copy', target:'#aBar' },
   { id:'problem', next:true },
   { id:'myProjects', act:'nav:my', target:'#nMy' },
   { id:'privateCard', act:'open:house', target:'#cHouse' },
@@ -202,7 +217,13 @@ const STEPS = [
 ];
 
 /* ---------- Screens ---------- */
+const projUrl = which => `https://portfolio.kodland.org/${which === 'robot' ? T.studentNick : T.houseNick}/${which === 'robot' ? 'cmrobo7x01sparks' : 'cmhouse4q02sparks'}`;
+function addressBar(){
+  const sc = S.screen, url = sc === 'robot' || sc === 'house' ? projUrl(sc) : sc === 'my' ? `https://portfolio.kodland.org/${S.myNick}` : sc === 'feed' ? 'https://portfolio.kodland.org/feed' : sc === 'form' ? 'https://portfolio.kodland.org/projects/new' : 'https://portfolio.kodland.org/studio';
+  $('#addr').innerHTML = `<span class="nav">‹ › ⟳</span><button class="bar ${S.copied && sc === 'robot' ? 'sel' : ''}" id="aBar" ${sc === 'robot' ? 'data-act="copy"' : ''}>🔒 <code>${url}</code></button>`;
+}
 function topbar(){
+  addressBar();
   const cur = S.screen === 'my' ? 'my' : S.screen === 'feed' ? 'feed' : S.screen === 'studio' ? 'studio' : '';
   $('#top').innerHTML = `<div class="brand"><b>Kodland Sparks</b><sup>α</sup><small>v0.10.6</small></div>
     <nav class="navl"><button id="nFeed" data-act="nav:feed" class="${cur === 'feed' ? 'cur' : ''}">Feed</button><button id="nMy" data-act="nav:my" class="${cur === 'my' ? 'cur' : ''}">My projects</button><button>Publish project</button><button class="studio">Studio</button><button class="aih"><i></i>AI helper</button><button class="gems">💎 ${S.gems}</button></nav>
@@ -246,14 +267,18 @@ function project(which){
   return `<div class="proj"><h1>${robot ? S.title : T.houseTitle}</h1>
     <div class="img" style="background:${robot ? '#ec4899' : '#bfe3ff'}">${robot ? pixel(ROBOT, '#ec4899', 280) : pixel(HOUSE, '#bfe3ff', 260)}</div>
     <div class="pacts">${priv ? '<span>Private project</span>' : '<span class="pubtag">🌐 Public</span>'}<span>⭳ Download</span><button class="edit" id="bEdit" data-act="edit">✎ Edit</button></div>
-    <div class="byline"><span><i class="av" style="width:30px;height:30px;font-size:13px">${robot ? T.studentInitial : 'M'}</i><b>${robot ? T.studentNick : T.houseNick}</b></span><span>Uploaded Oct 21, 2026</span></div>
-    <div class="linkbox" id="linkBox">🔗 <code>https://portfolio.kodland.org/${robot ? T.studentNick : T.houseNick}/${slug}</code><b>${priv ? '🔒' : '⧉ Copy'}</b></div></div>`;
+    <div class="byline"><span><i class="av" style="width:30px;height:30px;font-size:13px">${robot ? T.studentInitial : 'M'}</i><b>${robot ? T.studentNick : T.houseNick}</b></span><span>Uploaded Oct 21, 2026</span></div></div>`;
 }
 const card = (id, title, rowsBg, tags, by, act) => `<button class="pc" id="${id}" ${act ? `data-act="${act}"` : ''}><div class="th" style="background:${rowsBg[1]}">${pixel(rowsBg[0], rowsBg[1], 130)}<div class="tags">${tags.map(t => `<span>${t}</span>`).join('')}</div></div><div class="bd"><small>💖 0 ☺</small><b>${title}</b><small>${by}</small></div></button>`;
+// The profile ("My projects"): first the student's own (with the robot just published), later Marina's (the private-project case)
 function my(){
-  return `<div class="prof"><span class="av">M</span><div><h1>${T.houseNick}</h1><small>${T.houseName}</small></div></div>
-    <div class="grid">${card('cHouse', T.houseTitle, [HOUSE, '#bfe3ff'], S.house.vis === 'me' ? ['PNG', 'Private project'] : ['PNG'], '', 'open:house')}
-      ${card('cOld', T.houseOld, [ROBOT, '#a78bfa'], ['PNG', 'Private project'], '')}</div>`;
+  const mine = S.myNick === T.studentNick, nick = S.myNick, name = mine ? T.studentName : T.houseName, ini = mine ? T.studentInitial : 'M';
+  const cards = mine ? card('cRobot', S.title, [ROBOT, '#ec4899'], ['PNG'], '', 'open:robot')
+    : card('cHouse', T.houseTitle, [HOUSE, '#bfe3ff'], S.house.vis === 'me' ? ['PNG', 'Private project'] : ['PNG'], '', 'open:house') + card('cOld', T.houseOld, [ROBOT, '#a78bfa'], ['PNG', 'Private project'], '');
+  return `<div class="prof"><span class="av">${ini}</span><div><h1>${nick}</h1><small>${name}</small></div></div>
+    <div class="mywrap"><div><div class="box"><h4>Friends</h4><div class="in"><div class="tabs2"><span>Friends (0)</span><span>Subscribers (0)</span></div>No friends yet</div></div>
+      <div class="box"><h4>Activity</h4><div class="in">${nick} published a project</div></div></div>
+      <div class="mygrid">${cards}</div></div>`;
 }
 function feed(){
   const codeCard = (t, by) => `<div class="pc"><div class="th" style="background:#fafafa"><div class="code">for i in range(6):\n    z = i * 8\n    execute(f"fill ~5 ~{z}")</div><div class="tags"><span>Python</span></div></div><div class="bd"><small>💖 0 ☺</small><b>${t}</b><small>${by}</small></div></div>`;
@@ -307,15 +332,16 @@ function perform(act){
     if (S.formFor === 'robot'){ S.robot = { published:true, vis:S.vis }; S.screen = 'robot'; S.gems++; toast([['ok', '✓ Saved'], ['gem', 'Earned 1× 💎']]); }
     else { S.house.vis = S.vis; S.screen = 'house'; toast([['ok', '✓ Saved']]); }
   }
-  else if (a === 'nav'){ S.screen = arg; S.dd = false; }
+  else if (a === 'nav'){ S.screen = arg; S.dd = false; if (arg === 'my') S.myNick = S.copied ? T.houseNick : T.studentNick; }   // after the link is copied, the profile shown is Marina's (the problem case)
   else if (a === 'open') S.screen = arg;
+  else if (a === 'copy'){ S.copied = true; toast([['ok', '✓ ' + T.linkCopied]]); }
   else if (a === 'edit'){ S.formFor = S.screen === 'house' ? 'house' : 'robot'; S.vis = S.screen === 'house' ? S.house.vis : S.robot.vis; S.fb = false; S.screen = 'form'; }
   else if (a === 'dd') S.dd = !S.dd;
   else if (a === 'filter'){ S.filter = arg; S.dd = false; }
 }
 document.addEventListener('click', e => {
   const el = e.target.closest('[data-act]'); if (!el || !$('#app, #top') ) return;
-  if (!e.target.closest('#app') && !e.target.closest('#top')) return;
+  if (!e.target.closest('#app') && !e.target.closest('#top') && !e.target.closest('#addr')) return;
   const st = STEPS[S.step];
   if (st.act && el.dataset.act === st.act){ perform(st.act); S.step++; render(); return; }
   toast([['no', T.followStep]]);
