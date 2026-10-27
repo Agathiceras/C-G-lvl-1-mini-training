@@ -87,9 +87,9 @@ COURSE.notes = [
 /* ---------------- Modules ---------------- */
 COURSE.modules = [
   { id:'m1', n:1, e:'🧪', color:'#8B5CF6', title:'O conteúdo do curso',
-    desc:'Os dados gerais do curso, o que o aluno conquista, as 4 primeiras aulas e projetos reais publicados por alunos.',
-    obj:'Prepare-se para dar as primeiras aulas do Code & Game 1. Nelas, alunos de 8 a 9 anos vão partir de um protótipo pronto no Scratch e criar o próprio jogo, que será publicado no Kodland Sparks.',
-    offer:[['🔬','Conhecer os dados gerais do curso e o que o aluno conquista.'],['📖','Saber o que acontece em cada uma das 4 primeiras aulas.'],['⚡','Ver projetos reais publicados por alunos no Kodland Sparks.'],['📘','Revisar as aulas e as Teacher Notes no Backoffice.']],
+    desc:'Os dados gerais do curso, o que o aluno conquista, a Aula 1 e projetos reais publicados por alunos.',
+    obj:'Prepare-se para dar a Aula 1 do Code & Game 1. Nela, alunos de 8 a 9 anos abrem um projeto pronto no Scratch, montam a dança de um personagem e publicam o show no Kodland Sparks.',
+    offer:[['🔬','Conhecer os dados gerais do curso e o que o aluno conquista.'],['📖','Saber o que acontece na Aula 1.'],['⚡','Ver projetos reais publicados por alunos no Kodland Sparks.'],['📘','Revisar a aula e as Teacher Notes no Backoffice.']],
     sections:[
       { id:'ov', e:'🔬', title:'O curso', blocks:[
         { t:'meta', items:[['🧒','Idade','8–9 anos'],['⏱️','Aula','60 min'],['📚','Programa','40 aulas · 9 módulos'],['🧩','Módulo 1','Scratch']] },
@@ -111,35 +111,17 @@ COURSE.modules = [
           ['🧠','Pensamento sistêmico','Enxerga do que um jogo é feito (objetivo, ação, obstáculo, progresso, vitória) e procura e corrige os erros, em vez de ter medo deles.']
         ]}
       ]},
-      { id:'les', e:'📖', title:'As 4 primeiras aulas', blocks:[
-        { t:'p', html:'O Módulo 1, «A dança do herói e o Guardião do Portal», são dois projetos no Scratch: um show de dança e o jogo completo «O Guardião do Portal de Cristal». Abra cada aula e leia o que você precisa saber, o resultado-chave, o seu papel e os pontos de atenção.' },
+      { id:'les', e:'📖', title:'A Aula 1', blocks:[
+        { t:'p', html:'O Módulo 1, «A dança do herói e o Guardião do Portal», começa com um show de dança no Scratch. Abra a Aula 1 e leia o que você precisa saber, o resultado-chave, o seu papel e os pontos de atenção.' },
         { t:'lessons', key:'m1', items:[
           { tab:'M1A1', e:'💃', h:'Aula 1 — Dance Party', p:'Primeira aula do programa. Os alunos conhecem o grupo e abrem um projeto pronto em Scratch no Kodland Sparks, escolhem um personagem e montam a dança dele. Depois pedem um conselho ao Robby (o assistente de IA), acrescentam música e luz, e testam e publicam o show.',
             acc:[['📚','O que você precisa saber','<ul><li>O projeto abre pelo botão da aula, no <b>Scratch dentro do Kodland Sparks</b>. Os personagens (<b>sprites</b>) têm os blocos deles; ao clicar em um, aparecem os blocos dele.</li><li>A ideia central: <b>evento → ação → resultado</b>. Apertar Espaço é o evento; o bloco amarelo «quando a tecla Espaço for pressionada» dispara os comandos.</li><li>Três blocos úteis: <b>próximo traje</b>, <b>esperar</b> e <b>repetir</b>.</li><li><b>Robby</b>, o assistente de IA ao lado do editor, ajuda a sugerir o próximo passo. Hoje o foco é música e luz.</li></ul>'],
                  ['🎯','Resultado-chave','<ul><li>O personagem escolhido dança ao apertar a tecla Espaço.</li><li>O aluno aponta o bloco que inicia a dança e explica o que acontece depois de pressionar a tecla.</li><li>Compara duas pausas na dança e escolhe a que prefere.</li><li>Recebe e discute o conselho do Robby; no palco (<b>Stage</b>) montam-se a música e a mudança de cor.</li><li>Salva e publica o projeto, enviando o link no cartão da atividade.</li></ul>'],
                  ['🧑‍🏫','O seu papel','<ul><li>Apresente o mundo do curso em poucas palavras, mostre um exemplo do show e deixe as crianças se conhecerem (cerca de 15–20 segundos cada).</li><li>Explique com a tela e a ação: escolheu o personagem, achou os blocos dele, conectou, apertou a tecla e viu o resultado.</li><li>Primeiro deixe o aluno tentar sozinho; só depois guie com o exemplo do personagem escolhido.</li><li>Quando algo não funciona, pergunte: <i>«O que devia acontecer? O que aconteceu?»</i> Sugira uma verificação e espere a nova execução.</li></ul>'],
                  ['📌','Pontos de atenção','<ul><li>Se a tecla Espaço não inicia a dança, peça para clicar com o mouse no palco e depois confira se os comandos estão conectados ao bloco do evento e dentro do <b>repetir</b>.</li><li>No Palco são necessários <b>dois programas separados</b>: música e mudança de cor, cada um com a própria bandeira e o próprio <b>sempre</b>.</li><li>O Robby ajuda a sugerir; <b>quem monta e testa é o aluno</b>. Antes de pedir, reúna as ideias das crianças e, depois da resposta, pergunte se o conselho serve.</li></ul>'],
-                 ['⚙️','Aspectos técnicos','<ul><li>Antes da aula, abra o projeto inicial, confira o login no Sparks, a abertura pelo botão da aula, o Robby, o salvamento e a publicação.</li><li>Ao publicar, o aluno preenche o título e a descrição, definindo as configurações de visibilidade. <b>Vale lembrar: publicar no Sparks e enviar o link na plataforma são dois passos diferentes.</b></li><li>Confira se os links enviados estão abrindo corretamente.</li></ul>']] },
-          { tab:'M1A2', e:'💎', h:'Aula 2 — Guardião do Portal: o herói e os cristais', p:'Os alunos começam um jogo novo, o «Guardião do Portal»: baixam o projeto inicial e montam a primeira mecânica, com o herói, três cristais e uma pontuação visível. O perigo, a chave e o portal ficam para as próximas aulas.',
-            acc:[['📚','O que você precisa saber','<ul><li>Todo jogo tem <b>objetivo, regra e progresso visível</b>: coletar três cristais; tocar no cristal dá +1, toca um som e ele desaparece; a variável <b>Crystals</b> mostra o resultado.</li><li>O projeto é um <b>arquivo novo</b> (<code>Crystal_Portal_Guardian_Starter.sb3</code>), diferente do Dance Party. É carregado no Creator Lab: <b>Studio → Creative Mode → Slot 2 → Scratch → Upload .sb3</b>, sem abrir o arquivo com duplo clique.</li><li>Três cristais, três níveis de autonomia: no primeiro <b>conectar</b> a mecânica pronta, no segundo <b>completar</b> as peças que faltam, no terceiro <b>montar sozinho</b>.</li><li>O <b>início honesto</b>: o herói volta à posição inicial e a pontuação volta a 0.</li></ul>'],
-                 ['🎯','Resultado-chave','<ul><li>O projeto inicial abre e o herói anda pelo mapa.</li><li>Os três cristais são coletados: toque → +1 → som → desaparece.</li><li>Um novo início reinicia o jogo: o herói no lugar e a pontuação em zero.</li><li>A primeira versão do jogo é publicada.</li></ul>'],
-                 ['🧑‍🏫','O seu papel','<ul><li>Faça a transição em uma frase: «Hoje começamos o nosso jogo». Mostre primeiro a imagem final: o herói coleta os três cristais e a pontuação sobe.</li><li>Ajude a baixar e carregar o <b>arquivo novo</b> — não o projeto da aula anterior — e espere a maioria abrir antes de seguir.</li><li>Conduza passo a passo: <i>conecte → complete → monte sozinho</i>. Os blocos já estão na tela: não mande o aluno procurar na paleta.</li><li>Se perguntarem do perigo ou do portal: «isso fica para depois, hoje só os cristais».</li></ul>'],
-                 ['📌','Pontos de atenção','<ul><li>O único passo com IA é <b>a imagem do cristal</b> (um item no centro, fundo transparente, PNG). Se a IA não estiver disponível, escolha uma fantasia pronta. Sem dados pessoais nos pedidos.</li><li>Não mexa em <b>Danger, Key, Portal</b> nem no cenário <b>WIN</b>.</li><li>O teste completo segue os números 0 → 1 → 2 → 3 → novo início → 0.</li></ul>'],
-                 ['⚙️','Aspectos técnicos','<ul><li>Se o aluno não acha o arquivo: abrir a pasta de downloads e procurar o último arquivo terminado em <code>.sb3</code>; se não existir, baixar de novo.</li><li>Na imagem do cristal, o tamanho (<b>Size</b>) se ajusta depois do upload: siga o valor do cartão da aula.</li><li>No script do herói, a bandeira verde conecta o bloco <code>go to x: y:</code> e depois o <code>set Crystals to 0</code>.</li><li>Publique e envie só o link na plataforma.</li></ul>']] },
-          { tab:'M1A3', e:'🚪', h:'Aula 3 — Perigo, chave e portal', p:'Os alunos continuam o mesmo projeto da Aula 2 (sem baixar arquivo novo): acrescentam um perigo, uma chave que aparece depois dos três cristais, a abertura do portal e a passagem para a tela de vitória (vazia). No fim, equilibram a dificuldade e publicam.',
-            acc:[['📚','O que você precisa saber','<ul><li>O projeto é aberto de novo pelo Creator Lab, em <b>«Meus projetos»</b> — o aluno procura o projeto da aula passada.</li><li>A sequência: <b>perigo → chave → portal → vitória</b>, uma tarefa por vez.</li><li>A reação ao perigo é programada <b>no herói</b>, não no perigo. Há duas opções: voltar ao início (mais fácil) ou perder um cristal (mais difícil).</li><li>A chave só aparece depois dos três cristais. O sinal «chave coletada» já existe no projeto: não é preciso inventar outro.</li><li>Equilibrar a dificuldade é <b>mover o perigo ou a chave</b> e comparar onde é mais divertido jogar.</li></ul>'],
-                 ['🎯','Resultado-chave','<ul><li>Um perigo parado, e o herói reage a ele.</li><li>A chave aparece depois dos três cristais, some ao ser coletada e o portal abre.</li><li>Percurso completo até a tela de vitória; o aluno comparou duas posições.</li><li>Jogo publicado e link enviado.</li></ul>'],
-                 ['🧑‍🏫','O seu papel','<ul><li>Confira que o projeto da Aula 2 está aberto e que os cristais funcionam — senão, não comece a Aula 3.</li><li>Antes da montagem principal, só a imagem do perigo (com IA) e o lugar dela no mapa.</li><li>Conduza um <b>teste completo</b> do jogo do começo ao fim.</li><li>Reúna feedback dos colegas sobre a dificuldade, sem comparar projetos.</li></ul>'],
-                 ['📌','Pontos de atenção','<ul><li>A chave não aparece no início, e o portal fica fechado até a chave ser coletada.</li><li><b>Um perigo, uma reação:</b> sem vidas, clones nem inimigos novos.</li><li>A tela de vitória fica <b>vazia de propósito</b>: ela é decorada na Aula 4.</li><li>O único passo com IA é a imagem do perigo; se falhar, existe uma versão pronta no modelo. Sem dados pessoais.</li><li>Se o jogo ficou difícil demais, afaste o perigo do caminho do herói.</li></ul>'],
-                 ['⚙️','Aspectos técnicos','<ul><li>Existe um <b>modelo de reserva</b> caso o projeto se perca; use sem dramatizar.</li><li>Confira o salvamento antes de publicar e a abertura do link enviado.</li></ul>']] },
-          { tab:'M1A4', e:'🎉', h:'Aula 4 — Seu nível e o final', p:'Última aula do módulo. O aluno continua o mesmo projeto e só «decora» o jogo: fundo com IA, tela de vitória com uma frase do herói, um detalhe à escolha, publicação e desfile. Ao final, responde a um quiz sobre o ciclo do jogo.',
-            acc:[['📚','O que você precisa saber','<ul><li>O jogo da Aula 3 já funciona: hoje <b>não entram regras novas</b>, só personalização.</li><li><b>IA uma única vez</b>, para o fundo do mapa ou da tela de vitória. Se o aluno fez o fundo do mapa com IA, a tela de vitória usa a galeria do Scratch.</li><li>A frase de vitória é escolhida pelo aluno: um balão de texto <b>ou</b> voz — um jeito só. Entra no portal quando o herói vence.</li><li>Uma <b>«fishka»</b>, ou detalhe único, à escolha: fantasia, som ou efeito.</li></ul>'],
-                 ['🎯','Resultado-chave','<ul><li>O jogo é jogado até o fim e as mecânicas antigas continuam funcionando.</li><li>Três escolhas pessoais: o fundo, a frase de vitória e um detalhe único.</li><li>O jogo é publicado e o link é enviado.</li><li>O aluno responde ao quiz sobre o ciclo do jogo.</li></ul>'],
-                 ['🧑‍🏫','O seu papel','<ul><li>Crie o clima de estreia: «O jogo já funciona — hoje ele fica com a sua cara».</li><li>Ajude a abrir o projeto salvo e a rodar o jogo até a vitória.</li><li>Conduza um passo de IA (o fundo) e leve o aluno à publicação, ao desfile e à reflexão final.</li><li>No desfile, destaque o melhor detalhe ou estilo com o <b>Prêmio de Iteração</b>, <b>sem comparar projetos</b>.</li></ul>'],
-                 ['📌','Pontos de atenção','<ul><li>Se pararam de coletar cristais ou o portal não abre, <b>volte as últimas alterações</b>.</li><li>Não acrescente inimigos, fases, vidas nem uma segunda imagem de IA.</li><li>Um detalhe só, não tudo de uma vez.</li><li>Sem dados pessoais nos pedidos à IA; se não der certo, use um fundo da galeria do Scratch.</li></ul>'],
-                 ['⚙️','Aspectos técnicos','<ul><li>Abra o projeto pelo Creator Lab, em «Meus projetos» — não baixe arquivo novo.</li><li>Confira a publicação final e o link atualizado.</li><li>Lição de casa: melhorar a tela de vitória e enviar o link da versão atualizada.</li></ul>']] }
+                 ['⚙️','Aspectos técnicos','<ul><li>Antes da aula, abra o projeto inicial, confira o login no Sparks, a abertura pelo botão da aula, o Robby, o salvamento e a publicação.</li><li>Ao publicar, o aluno preenche o título e a descrição, definindo as configurações de visibilidade. <b>Vale lembrar: publicar no Sparks e enviar o link na plataforma são dois passos diferentes.</b></li><li>Confira se os links enviados estão abrindo corretamente.</li></ul>']] }
         ]},
-        { t:'callout', kind:'tip', e:'🗺️', html:'A primeira Teacher Note de cada aula tem o plano completo: resumo, resultado-chave, os tempos de cada cartão, o seu papel e os pontos de atenção. Na primeira aula também há um vídeo de preparação. <b>Leia todas as Teacher Notes antes da aula.</b>' }
+        { t:'callout', kind:'tip', e:'🗺️', html:'A primeira Teacher Note da aula tem o plano completo: resumo, resultado-chave, os tempos de cada cartão, o seu papel e os pontos de atenção. Há também um vídeo de preparação. <b>Leia todas as Teacher Notes antes da aula.</b>' }
       ]},
       { id:'proj', e:'⚡', title:'Projetos reais de alunos', blocks:[
         { t:'p', html:'É assim que ficam os projetos do Code & Game 1 depois que os alunos os publicam no Kodland Sparks. Os dois foram feitos por <b>alunos reais</b> do curso — abra-os para jogar na plataforma:' },
@@ -150,7 +132,7 @@ COURSE.modules = [
         { t:'callout', kind:'tip', e:'💬', html:'Repare na etiqueta <b>Feedback wanted</b> no segundo projeto: o aluno ativou <b>Request feedback</b> ao publicar. Uma avaliação curta em três campos — impressão geral, pontos fortes e uma coisa para melhorar — faz muita diferença.' }
       ]},
       { id:'bo', e:'📘', title:'Revise as aulas no Backoffice', blocks:[
-        { t:'p', html:'Antes da verificação, abra o curso no Backoffice e leia as quatro aulas no seu ritmo — os cartões de atividade e as Teacher Notes estão todos lá. Não há tempo limite.' },
+        { t:'p', html:'Antes da verificação, abra o curso no Backoffice e leia a aula no seu ritmo — os cartões de atividade e as Teacher Notes estão todos lá. Não há tempo limite.' },
         { t:'link', href:'https://bo.kodland.org/courses/2196', e:'📘', title:'Abrir o curso no Backoffice', small:'[2196] Code & Game 1 — as aulas e as Teacher Notes' },
         { t:'callout', kind:'warn', e:'🔄', html:'O conteúdo das aulas no Backoffice vai sendo atualizado com o feedback de alunos e tutores. Quando houver mudanças, você será avisado com antecedência para preparar a aula.' }
       ]}
@@ -160,15 +142,14 @@ COURSE.modules = [
     desc:'Um início forte, publicar e enviar o link em todas as aulas, e os problemas técnicos mais comuns.',
     obj:'Saiba o que garante o sucesso técnico das aulas do Code & Game 1: um início forte, a publicação no Kodland Sparks e o envio do link em <b>todas</b> as aulas, e as soluções para os problemas técnicos mais comuns.',
     needs:['sparksPublish'],
-    offer:[['🚀','Fazer da A1 e da A2 um início forte, com um resultado rápido e visível.'],['📤','Garantir que todos publiquem e enviem o link em todas as aulas — e conferir.'],['🌍','Explicar aos alunos por que o Sparks vale a pena.'],['🏁','Fechar o Módulo 1 mostrando conquistas e despertando o interesse pelo Módulo 2.']],
+    offer:[['🚀','Fazer da A1 um início forte, com um resultado rápido e visível.'],['📤','Garantir que todos publiquem e enviem o link em todas as aulas — e conferir.'],['🌍','Explicar aos alunos por que o Sparks vale a pena.']],
     sections:[
-      { id:'focus', e:'🎯', title:'Os 4 pontos que garantem o sucesso', blocks:[
+      { id:'focus', e:'🎯', title:'Os 3 pontos que garantem o sucesso', blocks:[
         { t:'p', html:'Estes são os pontos de foco definidos pelo time de produto para o Code & Game. Abra cada um:' },
         { t:'acc', items:[
-          ['🚀','A1–A2: um início forte','<p>As duas primeiras aulas decidem se o aluno quer voltar. Os objetivos são <b>conhecer o grupo</b> e chegar a um <b>resultado rápido e visível</b>.</p><ul><li>Use bem a apresentação: chame cada aluno pelo nome e conecte os interesses dele ao projeto.</li><li>Mostre o resultado final logo no começo (o show do Dance Party, o jogo do Guardião do Portal).</li><li>Garanta que <b>cada aluno termine a aula com algo funcionando</b> — mesmo que seja a versão mínima.</li></ul>'],
+          ['🚀','A1: um início forte','<p>A primeira aula decide se o aluno quer voltar. Os objetivos são <b>conhecer o grupo</b> e chegar a um <b>resultado rápido e visível</b>.</p><ul><li>Use bem a apresentação: chame cada aluno pelo nome e conecte os interesses dele ao projeto.</li><li>Mostre o resultado final logo no começo (o show do Dance Party).</li><li>Garanta que <b>cada aluno termine a aula com algo funcionando</b> — mesmo que seja a versão mínima.</li></ul>'],
           ['📤','Publicar e enviar o link em todas as aulas','<p>Em <b>todas as aulas</b>, desde a Aula 1, o aluno publica o projeto no Kodland Sparks e envia o link, e você confere.</p><ul><li>O link enviado no cartão deve ser o do <b>projeto já publicado</b>.</li><li>Na plataforma, deve ser enviado <b>apenas o link</b>.</li><li>Reserve um tempo no fim da aula para essa etapa — a publicação não pode ser deixada para depois.</li></ul>'],
-          ['🌍','Os benefícios do Sparks','<p>Explique aos alunos por que publicar vale a pena:</p><ul><li><b>Comunidade:</b> o projeto aparece no Feed e no portfólio.</li><li><b>Playtest:</b> outros jogadores testam o jogo de verdade.</li><li><b>Feedback:</b> dos jogadores (com <b>Request feedback</b>) e da IA, que destaca pontos fortes — e ainda rende cristais.</li></ul>'],
-          ['🏁','Última aula do M1: conquistas e gancho para o M2','<p>Na Aula 4, mostre o que os alunos conquistaram — o primeiro jogo completo e publicado — e <b>desperte o interesse pelo Módulo 2</b>.</p><ul><li>Faça o desfile: cada aluno mostra o jogo e conta as três escolhas pessoais.</li><li>Abra o portfólio de cada um no Sparks: os projetos das aulas estão lá.</li><li>Encerre com uma prévia curta e envolvente do próximo módulo.</li></ul>']
+          ['🌍','Os benefícios do Sparks','<p>Explique aos alunos por que publicar vale a pena:</p><ul><li><b>Comunidade:</b> o projeto aparece no Feed e no portfólio.</li><li><b>Playtest:</b> outros jogadores testam o jogo de verdade.</li><li><b>Feedback:</b> dos jogadores (com <b>Request feedback</b>) e da IA, que destaca pontos fortes — e ainda rende cristais.</li></ul>']
         ]}
       ]},
       { id:'publish', e:'📤', title:'Publicar no Kodland Sparks em todas as aulas', blocks:[
@@ -186,16 +167,13 @@ COURSE.modules = [
         { t:'acc', open:false, items:[
           ['🔒','O link do aluno não abre','<p>Confira primeiro se a publicação terminou e peça para copiar o link de novo. Se mesmo assim não abrir, quase sempre o projeto foi salvo como <b>Only me</b> (aparece a etiqueta <b>Private project</b>).</p><p>Peça ao aluno: <b>My projects → abrir o projeto → Edit → Public → Publish</b>. O link continua o mesmo e passa a abrir para todos. Se não resolver, peça para o aluno fazer o compartilhamento de tela.</p>'],
           ['🔍','O projeto não aparece no Feed','<p>O Feed mostra o último tipo de projeto filtrado. Peça ao aluno que <b>filtre pelo tipo do projeto</b> (por exemplo, <b>Scratch</b>) ou que busque pelo apelido.</p>'],
-          ['📂','O aluno abriu o .sb3 com duplo clique','<p>Na Aula 2, o projeto é carregado pela interface do Creator Lab: <b>Studio → Creative Mode → Slot 2 → Scratch → Upload .sb3</b>. Nunca com duplo clique na pasta de downloads.</p>'],
-          ['💃','A tecla Espaço não inicia a dança (Aula 1)','<p>Peça para clicar com o mouse no palco e tentar de novo. Depois confira se os comandos estão conectados ao bloco do evento e dentro do <b>repetir</b>.</p>'],
-          ['🖼️','A imagem gerada com IA atrapalha o jogo','<p>O cristal precisa ser um item só, no centro, com <b>fundo transparente</b> (PNG): sem retângulo branco ou colorido em volta. Se a IA falhar, use um traje pronto — sem perder tempo com gerações repetidas.</p>'],
-          ['↩️','O jogo parou de funcionar depois de mudanças','<p>Se o personagem não estiver coletando cristais ou o portal não abrir, desfaça as últimas alterações. Existe também um <b>modelo de reserva</b> caso o projeto se perca; use sem dramatizar — o importante é o aluno terminar e publicar.</p>']
+          ['💃','A tecla Espaço não inicia a dança (Aula 1)','<p>Peça para clicar com o mouse no palco e tentar de novo. Depois confira se os comandos estão conectados ao bloco do evento e dentro do <b>repetir</b>.</p>']
         ]}
       ]},
       { id:'check', e:'✅', title:'Checklist técnico de cada aula', blocks:[
         { t:'check', title:'✅ Meu checklist técnico', groups:[
-          { h:'☑️ Antes da aula', items:['Li todas as Teacher Notes da aula e vi o vídeo de preparação.','Abri o projeto inicial da aula, conferi o login no Sparks e sei onde está o modelo de reserva.'] },
-          { h:'🎬 Durante a aula', items:['Cada aluno abriu o projeto certo (da aula ou o salvo no Creator Lab).','Uso o Follow Mode para os cartões e compartilho só a aba da ferramenta nas demonstrações.'] },
+          { h:'☑️ Antes da aula', items:['Li todas as Teacher Notes da aula e vi o vídeo de preparação.','Abri o projeto inicial da aula e conferi o login no Sparks.'] },
+          { h:'🎬 Durante a aula', items:['Cada aluno abriu o projeto inicial da aula.','Uso o Follow Mode para os cartões e compartilho só a aba da ferramenta nas demonstrações.'] },
           { h:'📤 No fim da aula', items:['Todos publicaram o projeto no Sparks.','Todos enviaram o link do projeto publicado no cartão da aula.','Abri pelo menos alguns links para conferir se estão funcionando.'] }
         ]}
       ]}
@@ -208,9 +186,9 @@ COURSE.quiz = {
     { q:'Para quem é o Code & Game 1 e quanto dura cada aula?',
       o:['Para alunos de 8–9 anos, com aulas de 60 minutos em grupo.','Para alunos de 13–17 anos, com aulas de 90 minutos.','Para alunos de 6–7 anos, com aulas de 30 minutos.'],
       a:0, e:'O Code & Game 1 é para alunos de 8–9 anos, com 40 aulas de 60 minutos em grupo.' },
-    { q:'Como as primeiras aulas do curso são organizadas?',
-      o:['Primeiro se ensinam todos os blocos, e o projeto só vem no final.','Começam com um protótipo pronto, o resultado aparece na hora e, depois, as escolhas do aluno vão aumentando até o projeto autoral.','O aluno cria tudo do zero desde a primeira aula.'],
-      a:1, e:'Do protótipo ao projeto próprio: as escolhas aumentam aos poucos, e o último módulo o aluno faz por conta própria.' },
+    { q:'Qual é a ideia central da Aula 1 (Dance Party)?',
+      o:['Programar cada bloco do zero, sem nenhum projeto pronto.','Evento → ação → resultado: apertar Espaço é o evento, e o bloco «quando a tecla Espaço for pressionada» dispara os comandos da dança.','Criar um jogo completo, com fases e inimigos.'],
+      a:1, e:'Na Aula 1 os alunos abrem um projeto pronto e montam a dança de um personagem: o evento (tecla Espaço) dispara a ação e produz o resultado.' },
     { q:'Qual é o papel da IA nos projetos do curso?',
       o:['Programa a mecânica do jogo no lugar do aluno.','Sugere o próximo passo, propõe ideias, cria conteúdo e ajuda a encontrar erros; o aluno confere e decide.','Não é usada no curso.'],
       a:1, e:'A IA ajuda, o aluno decide. Ela não programa a mecânica do jogo no lugar da criança.' },
@@ -223,20 +201,24 @@ COURSE.quiz = {
       a:1, e:'Ajude o aluno a achar a causa do erro, com uma verificação por vez, sem resolver o bloco por ele.' }
   ],
   m2:[
-    { q:'Em quais aulas os alunos publicam o projeto no Kodland Sparks e enviam o link?',
-      o:['Só na última aula de cada módulo.','Em todas as aulas, desde a Aula 1.','Só quando o projeto está perfeito.'],
-      a:1, e:'Desde a Aula 1, em todas as aulas — e você confere se consegue abrir o link.' },
+    { q:'Quando os alunos publicam o primeiro projeto no Kodland Sparks e enviam o link?',
+      o:['Só quando o projeto está perfeito.','Já na Aula 1 — e você confere se consegue abrir o link.','Só no fim do módulo.'],
+      a:1, e:'Desde a Aula 1 o aluno publica o projeto e envia o link, e você confere se consegue abrir.' },
     { q:'Qual é a relação entre publicar no Sparks e enviar o link na plataforma?',
       o:['Basta publicar: o link vai sozinho para a plataforma.','São dois passos diferentes: o aluno publica o projeto e depois envia o link do projeto publicado.','Basta enviar o link: o projeto não precisa ser publicado.'],
       a:1, e:'Publicar e enviar o link são dois passos diferentes, e os dois são necessários.' },
     { ctx:'O link de um aluno não abre para você e, no portfólio dele, o projeto aparece como “Private project”.',
       q:'O que ele deve fazer?',
-      o:['My projects → abrir o projeto → Edit → Public → Publish.','Apagar o projeto e criar um novo.','Esperar até o dia seguinte.'],
-      a:0, e:'O projeto foi salvo como Only me. Com Edit → Public → Publish, o mesmo link passa a abrir para todos.' },
+      o:['Apagar o projeto e criar um novo.','Esperar até o dia seguinte.','My projects → abrir o projeto → Edit → Public → Publish.'],
+      a:2, e:'O projeto foi salvo como Only me. Com Edit → Public → Publish, o mesmo link passa a abrir para todos.' },
     { ctx:'Uma aluna diz que o projeto dela está público, mas não aparece no Feed.',
       q:'Qual é a orientação certa?',
-      o:['Filtrar o Feed pelo tipo do projeto (ou buscar pelo apelido).','Apagar e publicar de novo.','Esperar até a próxima aula.'],
+      o:['Filtrar o Feed pelo tipo do projeto (ou buscar pelo apelido).','Apagar e publicar de novo.','Esperar alguns dias.'],
       a:0, e:'O Feed mostra um tipo de projeto por vez. Filtrando pelo tipo certo, o projeto aparece.' },
+    { ctx:'Na Aula 1, a tecla Espaço não inicia a dança do personagem de um aluno.',
+      q:'O que você orienta primeiro?',
+      o:['Pedir que apague o personagem e escolha outro.','Clicar com o mouse no palco e tentar de novo; depois conferir se os comandos estão conectados ao bloco do evento e dentro do «repetir».','Reorganizar os blocos por ele.'],
+      a:1, e:'Primeiro clicar no palco e tentar de novo; depois conferir a conexão com o bloco do evento e o «repetir». Quem monta e testa é o aluno.' },
     { q:'Como você mostra os cartões da aula e as demonstrações?',
       o:['Compartilhando a tela inteira, com tudo aberto.','Com o Follow Mode para os cartões e compartilhando só a aba da ferramenta nas demonstrações.','Sem compartilhar nada: os alunos leem sozinhos.'],
       a:1, e:'Follow Mode para os cartões; nas demonstrações, só a aba da ferramenta.' }
@@ -251,9 +233,9 @@ COURSE.done = {
     <p>A nota mínima para passar é <b>80%</b>.</p>
     <p>Boa sorte! ❤️</p>`,
   nexts: [
-    ['📒', '<b>Antes de cada aula:</b> leia as Teacher Notes no Backoffice e veja o vídeo de preparação.'],
-    ['📤', '<b>Em todas as aulas:</b> todos publicam no Sparks e enviam o link do projeto publicado no cartão.'],
+    ['📒', '<b>Antes da aula:</b> leia as Teacher Notes no Backoffice e veja o vídeo de preparação.'],
+    ['📤', '<b>Desde a Aula 1:</b> todos publicam no Sparks e enviam o link do projeto publicado no cartão.'],
     ['🤖', '<b>A IA ajuda, o aluno decide:</b> o aluno confere o resultado e decide o que manter.'],
-    ['🚀', '<b>A1–A2:</b> conheça o grupo e chegue rápido a um resultado visível.']
+    ['🚀', '<b>A1:</b> conheça o grupo e chegue rápido a um resultado visível.']
   ]
 };
