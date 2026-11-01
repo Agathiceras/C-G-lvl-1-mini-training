@@ -1,51 +1,32 @@
 <!doctype html>
-<html lang="es">
+<html lang="pt">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Creatividad Digital 1 · Criatividade Digital 1</title>
+<title>EM</title>
+<script>
+/* Language: ?lang=xx loads assets/content-xx.js (falls back to the base version, content-pt.js) */
+(function(){ var m = /[?&]lang=([a-z]{2}(?:-[A-Za-z]{2})?)/.exec(location.search); window.LANG = m ? m[1] : 'pt';
+  document.write('<script src="assets/content-' + LANG + '.js"><\/script>'); })();
+</script>
+<script>if (!window.COURSE){
+  if (LANG !== 'pt') document.addEventListener('DOMContentLoaded', function(){ var b = document.createElement('div');
+    b.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#E5484D;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:10px 16px;text-align:center';
+    b.textContent = '⚠ assets/content-' + LANG + '.js could not be loaded (missing file or an error inside it). Showing the base version (content-pt.js) instead.'; document.body.appendChild(b); });
+  window.LANG = 'pt'; document.write('<script src="assets/content-pt.js"><\/script>'); }</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-/* Language and region page: each card opens the training for that region (training.html?lang=xx) */
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:#E8FABD;color:#111;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
-.wrap{max-width:980px;margin:0 auto;padding:40px 16px 60px}
-.logo{font-family:Nunito,sans-serif;font-weight:900;font-size:24px}.logo small{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:12px;color:#F03D9E;margin-left:6px}
-.kick{display:inline-block;margin-top:34px;background:#111;color:#C4F046;font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:6px 14px}
-h1{font-family:Nunito,sans-serif;font-weight:900;font-size:clamp(30px,5vw,46px);line-height:1.1;margin:14px 0 10px}
-h1 span{background:var(--c);color:#fff;border-radius:14px;padding:0 12px}
-.sub{font-size:16px;color:#3a3a3a;margin:0 0 6px}
-.sub2{font-size:14px;color:#5b6070;margin:0 0 26px;line-height:1.7}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
-a.lang{display:flex;gap:14px;align-items:center;background:#fff;border:2px solid #D8F07A;box-shadow:0 5px 0 #BFE15A;border-radius:18px;padding:16px 18px;text-decoration:none;color:#111;transition:transform .12s,box-shadow .12s}
-a.lang:hover{transform:translateY(-2px);box-shadow:0 7px 0 #BFE15A;border-color:#111}
-a.lang i{font-style:normal;font-size:30px;line-height:1}
-a.lang b{display:block;font-size:17px}
-a.lang small{display:block;color:#5b6070;font-size:13px;margin-top:2px}
-a.lang em{margin-left:auto;font-style:normal;font-weight:800;color:#F03D9E}
-a.lang[dir=rtl] em{margin-left:0;margin-right:auto}
-.foot{margin-top:34px;font-size:12.5px;color:#5b6070}
-</style>
+<link rel="stylesheet" href="shared/course.css">
 </head>
-<body style="--c:#8B5CF6">
-<div class="wrap">
-  <div class="logo">kodland<small>New Educational Model</small></div>
-  <span class="kick">🎓 EM course training</span>
-  <h1>Digital Creativity <span>1</span></h1>
-  <p class="sub"><b>Elige tu idioma</b> para abrir la formación · <b>Escolha seu idioma</b> para abrir a formação.</p>
-  <div class="grid" id="langs"></div>
-  <p class="foot">kodland · New Educational Model · Course training</p>
-</div>
-<script>
-// Languages and regions of this training: [lang code for training.html, flag, language, region]
-const LANGS = [
-  ['es', '🌎', 'Español', 'Latinoamérica · Backoffice [2199]'],
-  ['pt', '🇧🇷', 'Português', 'Brasil · Backoffice [2200]']
-];
-document.getElementById('langs').innerHTML = LANGS.map(l =>
-  `<a class="lang" href="training.html?lang=${l[0]}" lang="${l[0]}" ${l[0] === 'ar' ? 'dir="rtl"' : ''}><i>${l[1]}</i><span><b>${l[2]}</b><small>${l[3]}</small></span><em>${l[0] === 'ar' ? '←' : '→'}</em></a>`).join('');
-</script>
+<body>
+<nav class="nav" id="nav"></nav>
+<main id="view"></main>
+<div class="ovl" id="modal"></div>
+<canvas id="confetti"></canvas>
+<footer class="foot"><span id="footTxt"></span><button id="devLink"></button></footer>
+<script src="shared/course-engine.js"></script>
+<script src="shared/start-survey.js"></script>
+<script src="shared/final-survey.js"></script>
 </body>
 </html>
